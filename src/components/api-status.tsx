@@ -1,6 +1,6 @@
 async function checkHealth(): Promise<boolean> {
   try {
-    const response = await fetch(`${process.env.API_URL}/health`, {
+    const response = await fetch(`${process.env.API_URL}/ready`, {
       signal: AbortSignal.timeout(2000),
     });
     return response.ok;
